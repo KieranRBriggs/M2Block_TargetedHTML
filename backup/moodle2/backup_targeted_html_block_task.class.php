@@ -16,25 +16,36 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * This file keeps track of upgrades to the html block
- *
- * @since 2.0
- * @package block_html
- * @copyright 2010 Dongsheng Cai
+ * @package moodlecore
+ * @subpackage backup-moodle2
+ * @copyright 2003 onwards Eloy Lafuente (stronk7) {@link http://stronk7.com}
  * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
+ * Specialised backup task for the html block
+ * (requires encode_content_links in some configdata attrs)
  *
- * @param int $oldversion
- * @param object $block
+ * TODO: Finish phpdocs
  */
-function xmldb_block_targeted_html_upgrade($oldversion) {
-    global $CFG, $DB;
+class backup_targeted_html_block_task extends backup_block_task {
 
-    // Moodle v2.3.0 release upgrade line
-    // Put any upgrade step following this
+    protected function define_my_settings() {
+    }
 
+    protected function define_my_steps() {
+    }
 
-    return true;
+    public function get_fileareas() {
+        return array('content');
+    }
+
+    public function get_configdata_encoded_attributes() {
+        return array('text'); // We need to encode some attrs in configdata
+    }
+
+    static public function encode_content_links($content) {
+        return $content; // No special encoding of links
+    }
 }
+
