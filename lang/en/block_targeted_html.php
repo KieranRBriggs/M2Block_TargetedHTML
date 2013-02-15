@@ -34,3 +34,5 @@ $string['html:myaddinstance'] = 'Add a new HTML block to the My Moodle page';
 $string['leaveblanktohide'] = 'leave blank to hide the title';
 $string['newhtmlblock'] = '(new Targeted HTML block)';
 $string['pluginname'] = 'Targeted HTML';
+$string['configtarget'] = 'Target Staff or Students?';
+$string['configtargethelp'] = 'Tick for Staff only, Untick for Students only';

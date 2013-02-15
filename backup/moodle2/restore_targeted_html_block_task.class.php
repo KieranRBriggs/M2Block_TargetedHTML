@@ -63,7 +63,7 @@ class restore_targeted_html_block_task extends restore_block_task {
  * field, to serve the configdata->text content to the restore_decode_processor
  * packaging it back to its serialized form after process
  */
-class restore_html_block_decode_content extends restore_decode_content {
+class restore_targeted_html_block_decode_content extends restore_decode_content {
 
     protected $configdata; // Temp storage for unserialized configdata
 

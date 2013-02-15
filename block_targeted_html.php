@@ -51,12 +51,20 @@ class block_targeted_html extends block_base {
         require_once($CFG->libdir . '/filelib.php');
         
         $email = $USER->email;
-        $str = '@sheffcol.ac.uk';
-        $test = substr($email, -15);
-	
+        
+        $tester = $this->config->target;
+        print_r($tester);
+        if($this->config->target = 'Staff') {
+        	$str = '@sheffcol.ac.uk';
+        	$test = substr($email, -15);
+        } else {
+	        $str = '@student.sheffcol.ac.uk';
+        	$test = substr($email, -23);
+        }
         if ($this->content !== NULL) {
             return $this->content;
         }
+        
         
         if ($test == $str) {
         

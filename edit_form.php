@@ -49,6 +49,8 @@ class block_targeted_html_edit_form extends block_edit_form {
             $mform->setType('config_classes', PARAM_TEXT);
             $mform->addHelpButton('config_classes', 'configclasses', 'block_targeted_html');
         }
+        $TARGETS = array('Staff', 'Students');
+        $mform->addElement('select', 'config_target', get_string('configtarget', 'block_targeted_html'), $TARGETS);
     }
 
     function set_data($defaults) {
